@@ -8,7 +8,7 @@ Installation of python3 and pytest were used and are required to run these progr
 
 The requests, JSON, math, and typing modules are used within this code to support data handling, complex math functions, and type hints. Errors will arise if these modules are not installed correctly.
 
-Finally, the "analyze_water.py" file contains a reference to a JSON file which can also be accessed [here]( https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json).
+Finally, the "analyze_water.py" file contains a reference to a JSON file which can also be accessed [here]( https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json). The data has information on turbidity which is used to determine water quality. Using the requests module, as shown in the "analyze_water.py" file, you can access and use this data. 
 
 ## Clean Water Analysis
 Homework 3 follows after Homework 2 where a robotic vehicle on Mars explored meteorite landing sites in Syrtis Major and collected meteorite samples. In Homework 3, the samples are analyzed. In order to analyze the samples, clean water is needed. Therefore, the purpose of this project is to assess the current water quality, given as turbidity data, to determine if the water is clean or the lab needs a boil water notice. 
