@@ -33,6 +33,7 @@ Using the XML data, the function ```get_data``` reads this information into a us
 ### Task 2 - Query the ISS Data Using Flask
 Using the data populated from Task 1, return the following data for the following routes:
 | Route | What it should return | 
+| ---------------------------- | ---------------------------- |
 | ```/``` | the entire data set |
 | ```/epoch``` | a list of all epochs in the set | 
 | ```/epoch/<epoch>``` | data for a specific Epoch from the data set |
