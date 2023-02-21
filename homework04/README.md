@@ -42,8 +42,15 @@ Using the data populated from Task 1, return the following data for the followin
 In order to find the speed in the last route the following equation was used:
 speed = sqrt(x_dot^2 + y_dot^2 + z_dot^2)
 
+## Cloning the Repository
+In order to retrieve the data from this repository use the command
+```
+git clone git@github.com:silvermadison/my-coe332-hws/homework04.git
+```
+This will provide you with all the data in the homework04 folder in this repository.
+
 ## Running the Code
-In order to run the code, open another tab in your linux operating system. 
+Now that you have the application and code, you can run the code. In order to run the code, open another tab in your linux operating system so that you have two tabs total. 
 In one tab we will run the Flask application so we can leave it in the foreground while working in the other tab. The server will automatically update as we are working in the other tab. 
 ```
 flask --app iss_tracker --debug run
