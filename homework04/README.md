@@ -51,7 +51,7 @@ This will provide you with all the data in this repository. Make sure you move t
 
 ## Running the Code
 Now that you have the application and code, you can run the code. In order to run the code, open another tab in your linux operating system so that you have two tabs total. 
-In one tab we will run the Flask application so we can leave it in the foreground while working in the other tab. The server will automatically update as we are working in the other tab. 
+In one tab we will run the Flask application, using the command line below, so we can leave it in the foreground while working in the other tab. The server will automatically update as we are working in the other tab. 
 ```
 flask --app iss_tracker --debug run
 ```
