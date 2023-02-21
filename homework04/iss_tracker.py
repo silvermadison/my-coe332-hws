@@ -74,7 +74,7 @@ def get_speed(epoch):
             epoch (int): the specific number of the data set to look at
 
         Returns:
-            speed (int): the instantaneous speed of the given epoch
+            speed (float): the instantaneous speed of the given epoch
     '''
     data = get_data()
     #if epoch is not in data - same format as in get_an_epoch_data function
