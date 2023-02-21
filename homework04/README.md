@@ -62,7 +62,7 @@ curl localhost:5000
 ```
 
 Note that if the flask server is not running while making a ```curl``` request then you will get an error.
-Now we will test the routes in ```iss_tracker.py```. An example of a route that will be tested is:
+Finally, test all the routes from Task 2 to ensure the program ```iss_tracker.py``` works properly. An example command line of a route that will be tested is:
 ```
 curl localhost:5000/epoch
 ```
