@@ -8,20 +8,20 @@ The key takeaway from this project is to practice software design including REST
 This program requires importing the math module and requests, xmltodict, and flask libraries. Follow instructions below to install necessary components.
 
 Install the library xmltodict: 
-'''
+```
 pip3 install --user xmltodict
-'''
+```
 
 
 Install the requests library:
-'''
+```
 pip3 install --user requests
-'''
+```
 
 Install the flask library:
-'''
+```
 pip3 install --user flask
-'''
+```
 
 ## ISS Data
 Given International Space Station (ISS) positional and velocity data, the task is to build a Flask application for querying and returning interesting information from the ISS data set.
@@ -44,23 +44,24 @@ speed = sqrt(x_dot^2 + y_dot^2 + z_dot^2)
 ## Running the Code
 In order to run the code, open another tab in your linux operating system. 
 In one tab we will run the Flask application so we can leave it in the foreground while working in the other tab. The server will automatically update as we are working in the other tab. 
-'''
+```
 flask --app iss_tracker --debug run
-'''
+```
 
 In the other tab, **not** running the Flask application, we will run commands to test the code. Using the "curl" command we will talk to the server. The server is listening on the "local host" on the default flask port "5000". To make a request to the Flask application our statement will follow the format:
-'''
+```
 curl localhost:5000
-'''
+```
+
 Note that if the flask server is not running while making a "curl" request then you will get an error.
 Now we will test the routes in "iss_tracker.py". An example of a route that will be tested is:
-'''
+```
 curl localhost:5000/epoch
-'''
+```
 
 ### Example Outputs
-Example output for '/':
-'''
+Example output for ```/```:
+```
 [
   {
     "EPOCH": "2023-048T12:00:00.000Z",
@@ -119,10 +120,10 @@ Example output for '/':
 
 …
 ]
-'''
+```
 
 Example output for '/epoch': 
-'''
+```
 [
   "2023-048T12:00:00.000Z",
   "2023-048T12:04:00.000Z",
@@ -131,10 +132,10 @@ Example output for '/epoch':
   "2023-048T12:16:00.000Z",
 …
 ]
-'''
+```
 
 Example output for '/epoch/1': 
-'''
+```
 {
   "EPOCH": "2023-048T12:04:00.000Z",
   "X": {
@@ -162,12 +163,12 @@ Example output for '/epoch/1':
     "@units": "km/s"
   }
 }
-'''
+```
 
-Example output for '/epoch/1/speed':
-'''
+Example output for ```/epoch/1/speed```:
+```
 speed: 7.662046317290625 km/s
-'''
+```
 
 
 
