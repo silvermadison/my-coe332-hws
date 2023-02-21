@@ -28,15 +28,15 @@ Given International Space Station (ISS) positional and velocity data, the task i
 
 ### Task 1 - Read the Data
 The ISS positional and velocity data can be found at their website (https://spotthestation.nasa.gov/trajectory_data.cfm).
-Using the XML data, the function "get_data" reads this information into a usable dictionary of the data we are trying to find.
+Using the XML data, the function ```get_data``` reads this information into a usable dictionary of the data we are trying to find.
 
 ### Task 2 - Query the ISS Data Using Flask
 Using the data populated from Task 1, return the following data for the following routes:
 | Route | What it should return | 
-| / | the entire data set |
-| /epoch | a list of all epochs in the set | 
-| /epoch/<epoch> | data for a specific Epoch from the data set |
-| /epoch/<epoch>/speed | instantaneous speed for a specific Epoch in the data set  |
+| ```/``` | the entire data set |
+| ```/epoch``` | a list of all epochs in the set | 
+| ```/epoch/<epoch>``` | data for a specific Epoch from the data set |
+| ```/epoch/<epoch>/speed``` | instantaneous speed for a specific Epoch in the data set  |
 
 In order to find the speed in the last route the following equation was used:
 speed = sqrt(x_dot^2 + y_dot^2 + z_dot^2)
@@ -48,13 +48,13 @@ In one tab we will run the Flask application so we can leave it in the foregroun
 flask --app iss_tracker --debug run
 ```
 
-In the other tab, **not** running the Flask application, we will run commands to test the code. Using the "curl" command we will talk to the server. The server is listening on the "local host" on the default flask port "5000". To make a request to the Flask application our statement will follow the format:
+In the other tab, **not** running the Flask application, we will run commands to test the code. Using the ```curl``` command we will talk to the server. The server is listening on the ```local host``` on the default flask port ```5000```. To make a request to the Flask application our statement will follow the format:
 ```
 curl localhost:5000
 ```
 
-Note that if the flask server is not running while making a "curl" request then you will get an error.
-Now we will test the routes in "iss_tracker.py". An example of a route that will be tested is:
+Note that if the flask server is not running while making a ```curl``` request then you will get an error.
+Now we will test the routes in ```iss_tracker.py```. An example of a route that will be tested is:
 ```
 curl localhost:5000/epoch
 ```
@@ -117,12 +117,11 @@ Example output for ```/```:
       "@units": "km/s"
     }
   },
-
 …
 ]
 ```
 
-Example output for '/epoch': 
+Example output for ```/epoch```: 
 ```
 [
   "2023-048T12:00:00.000Z",
@@ -134,7 +133,7 @@ Example output for '/epoch':
 ]
 ```
 
-Example output for '/epoch/1': 
+Example output for ```/epoch/1```: 
 ```
 {
   "EPOCH": "2023-048T12:04:00.000Z",
@@ -169,6 +168,4 @@ Example output for ```/epoch/1/speed```:
 ```
 speed: 7.662046317290625 km/s
 ```
-
-
 
