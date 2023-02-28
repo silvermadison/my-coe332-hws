@@ -44,7 +44,7 @@ To check your version of flask, in the VM command line run ```pip freeze | grep 
 ```
 Flask==2.2.2
 ```
-The version of Flask I am using is 2.2.2 and this version is also used in the Dockerfile.
+The version of Flask I am using is 2.2.2 and this version is also used in the ```RUN``` instruction in the Dockerfile.
 
 To check your version of requests, in the VM command line run ```pip freeze | grep requests```. Output should look similar to:
 ```
