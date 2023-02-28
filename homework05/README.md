@@ -8,6 +8,8 @@ This folder includes 1 script, 1 Dockerfile, and 1 README file.
 ## ISS Data
 The International Space Station (ISS) data is a dictionary of data points with epoch, position, and velocity data with a name EPOCH and keys X, X_DOT, Y, Y_DOT, Z, Z_DOT. The ISS information can be found at their website (https://spotthestation.nasa.gov/trajectory_data.cfm).
 
+Keeter, Bill. “ISS Trajectory Data.” Edited by Jacob Keaton, *Spot the Station International Space Station*, NASA, 27 July 2021, https://spotthestation.nasa.gov/trajectory_data.cfm. 
+
 ### Part 1 - Routes
 In the ```iss_tracker.py``` file, it contains instructions for reading the ISS data and the app routes below. The requests and xmltodict modules are used to read the ISS information into a usable dictionary of the data. 
 
