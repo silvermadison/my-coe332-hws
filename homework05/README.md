@@ -72,7 +72,7 @@ silvermadison/iss_tracker   hw05      9b88163e71e8   7 minutes ago    897MB
 ```
 
 ### Run the Containerized Flask App
-Test the image with the command ```docker run -it --rm silvermadison/iss_tracker:hw05 /bin/bash```
+Test the image with the command ```docker run -it --rm silvermadison/iss_tracker:hw05 /bin/bash```.
 Once this is run you should be in the container. From here you can go into the python interpreter to ensure the flask, requests, and xmltodict modules have been installed with no errors. This exchange should look like the following:
 ```
 root@9a1f45a8ea52:/# python
@@ -243,7 +243,7 @@ The route '/post-data' reloads the dictionary with data from the web.
 
 In order to run the ```/delete-data``` route you must run the ```curl``` a little differently: ```curl -X DELETE localhost:5000/delete-data```. The output should be an empty dataset since it deletes the data:
 ```
-[ ]
+[]
 ```
 Check that the data set has actually been deleted by running ```curl localhost:5000/```.
 
