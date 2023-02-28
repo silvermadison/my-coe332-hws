@@ -65,6 +65,12 @@ To get the image from Docker Hub use the command ```docker pull silvermadison/is
 
 
 ### Build a New Image from This Dockerfile
+In order to retrieve the data from this repository use the command
+```
+git clone git@github.com:silvermadison/my-coe332-hws.git
+```
+This will provide you with all the data in this repository. Navigate to the homework05 folder to access its contents so you can follow along with this assignment.
+
 Create the image using the command ```docker build -t silvermadison/iss_tracker:hw05 .```.
 
 Check to make sure the image is there using the command```docker images```. Output should look like:
