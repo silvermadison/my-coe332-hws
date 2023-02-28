@@ -238,7 +238,7 @@ The route '/' returns the entire data set.
 The route '/epochs' returns a list of all the epochs in the data set.
 The route '/epochs?limit=int&offset=int' returns a list of epochs in the data set between offset and limit. If offset is not given then the list will start at the first epoch and if limit is not given the list will end at the last epoch.
 The route '/epochs/<epoch>' returns a dictionary of the specific epoch data set requested with unique keys about its position and velocity data.
-The route '/epochs/<epoch>/speed' returns the instantaneous speed for a specific epoch in the data set. \n")
+The route '/epochs/<epoch>/speed' returns the instantaneous speed for a specific epoch in the data set.
 The route '/delete-data' deletes all data from the data set. 
 The route '/post-data' reloads the dictionary with data from the web.
 ```
