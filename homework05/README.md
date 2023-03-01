@@ -6,7 +6,7 @@ The purpose of this assignment is to practice software design including REST API
 This folder includes 1 script, 1 Dockerfile, and 1 README file.
 
 ## Required Modules
-This projct requires the installation of the requests, Flask, and xmltodict modules.
+This project requires the installation of the requests, Flask, and xmltodict modules. Install these modules with the ```pip install``` command in the command line.
 
 ## ISS Data
 The International Space Station (ISS) data is a dictionary of data points with epoch, position, and velocity data with a name EPOCH and keys X, X_DOT, Y, Y_DOT, Z, Z_DOT. The ISS information can be found at their website (https://spotthestation.nasa.gov/trajectory_data.cfm).
