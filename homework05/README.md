@@ -5,8 +5,13 @@ The purpose of this assignment is to practice software design including REST API
 ## Contents
 This folder includes 1 script, 1 Dockerfile, and 1 README file.
 
+## Required Modules
+This project requires the installation of the requests, Flask, and xmltodict modules. Install these modules with the ```pip install``` command in the command line.
+
 ## ISS Data
 The International Space Station (ISS) data is a dictionary of data points with epoch, position, and velocity data with a name EPOCH and keys X, X_DOT, Y, Y_DOT, Z, Z_DOT. The ISS information can be found at their website (https://spotthestation.nasa.gov/trajectory_data.cfm).
+
+Keeter, Bill. “ISS Trajectory Data.” Edited by Jacob Keaton, *Spot the Station International Space Station*, NASA, 27 July 2021, https://spotthestation.nasa.gov/trajectory_data.cfm. 
 
 ### Part 1 - Routes
 In the ```iss_tracker.py``` file, it contains instructions for reading the ISS data and the app routes below. The requests and xmltodict modules are used to read the ISS information into a usable dictionary of the data. 
@@ -42,7 +47,7 @@ To check your version of flask, in the VM command line run ```pip freeze | grep 
 ```
 Flask==2.2.2
 ```
-The version of Flask I am using is 2.2.2 and this version is also used in the Dockerfile.
+The version of Flask I am using is 2.2.2 and this version is also used in the ```RUN``` instruction in the Dockerfile.
 
 To check your version of requests, in the VM command line run ```pip freeze | grep requests```. Output should look similar to:
 ```
@@ -63,6 +68,12 @@ To get the image from Docker Hub use the command ```docker pull silvermadison/is
 
 
 ### Build a New Image from This Dockerfile
+In order to retrieve the data from this repository use the command
+```
+git clone git@github.com:silvermadison/my-coe332-hws.git
+```
+This will provide you with all the data in this repository. Navigate to the homework05 folder to access its contents so you can follow along with this assignment.
+
 Create the image using the command ```docker build -t silvermadison/iss_tracker:hw05 .```.
 
 Check to make sure the image is there using the command```docker images```. Output should look like:
@@ -236,7 +247,7 @@ The route '/' returns the entire data set.
 The route '/epochs' returns a list of all the epochs in the data set.
 The route '/epochs?limit=int&offset=int' returns a list of epochs in the data set between offset and limit. If offset is not given then the list will start at the first epoch and if limit is not given the list will end at the last epoch.
 The route '/epochs/<epoch>' returns a dictionary of the specific epoch data set requested with unique keys about its position and velocity data.
-The route '/epochs/<epoch>/speed' returns the instantaneous speed for a specific epoch in the data set. \n")
+The route '/epochs/<epoch>/speed' returns the instantaneous speed for a specific epoch in the data set.
 The route '/delete-data' deletes all data from the data set. 
 The route '/post-data' reloads the dictionary with data from the web.
 ```

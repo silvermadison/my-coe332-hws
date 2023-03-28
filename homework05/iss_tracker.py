@@ -17,7 +17,7 @@ def get_data_set():
         This function gets the entire ISS data set that we are using
 
         Returns:
-        data (dict): a dictionary of usable ISS data with the same keys
+            data (dict): a dictionary of usable ISS data with the same keys
     '''
     return data
 
@@ -27,7 +27,7 @@ def epoch_args():
         This function returns only a list of epochs which is a key name.
 
         Returns:
-            epoch_list(list): a list of epoch data between offset (a start parameter) and limit (the ending parameter)
+            epoch_list(list): a list of epoch data between offset (a start parameter) and limit (the ending parameter) and if they arenn't given then a list of all epoch data
     '''
     maximum = len(data)
     epoch_list = []
@@ -97,6 +97,9 @@ def get_speed(epoch):
 def help():
     '''
         This function contains available routes and a short description of what each returns.
+        
+        Returns:
+            A string of routes and what each returns.
     '''
     welcome = "Welcome to Help! Below are available routes and their return statements. \n \n"
     r1 = ("The route '/' returns the entire data set. \n") 
@@ -112,7 +115,10 @@ def help():
 @app.route('/delete-data', methods = ['DELETE'])
 def delete_data():
     '''
-        Deletes all the data in the dictionary object.
+        This function deletes all the data in the dictionary object.
+        
+        Returns:
+            data (dict): an empty dictionary.
     '''
     global data
     data = []; 
@@ -121,7 +127,10 @@ def delete_data():
 @app.route('/post-data', methods = ['POST'])
 def post_data():
     '''
-    Reloads the dictionary object with data from ISS on the web.
+        This function reloads the dictionary object with data from ISS on the web.
+        
+        Returns:
+            A string stating the data has been posted.
     '''
     global data 
     data = info['ndm']['oem']['body']['segment']['data']['stateVector']
