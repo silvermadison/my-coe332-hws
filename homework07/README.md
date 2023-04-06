@@ -101,13 +101,11 @@ And, for the command ```kubectl get services``` output should look similar to:
 ```
 NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 msilver-test-flask   ClusterIP   10.233.35.77    <none>        5000/TCP   36h
-
-
 ``` 
 
 
 ### Accessing the API
-After running the ```kubectl get pods```, notice the python debug deployment pod. In order to make commands on the API, we will need to run a shell in this pod. Do so with: ```kubectl exec -it <python debug deployment pod name> – /bin/bash```.
+After running the ```kubectl get pods``` command, notice the python debug deployment pod. In order to make commands on the API, we will need to run a shell in this pod. Do so with: ```kubectl exec -it <python debug deployment pod name> – /bin/bash```.
 The shell prompt should change to the following, which shows that you are “inside” the container: ```root@py-debug-deployment-f484b4b99-wxdsx:/#```. From here, run an API route. Note the Cluster-IP address for your service after the command  ```kubectl get services```. This IP will be used in replacement for “localhost”.
 
 ### API Command Examples
