@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msilver-test-redis
+  labels:
+    app: msilver-test-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msilver-test-redis
+  template:
+    metadata:
+      labels:
+        app: msilver-test-redis
+    spec:
+      containers:
+        - name: msilver-test-redis
+          imagePullPolicy: Always
+          image: redis:6
+          command:
+          volumeMounts:
+          - name: msilver-test-redis
+            mountPath: "/data"
+      volumes:
+      - name: msilver-test-redis
+        persistentVolumeClaim:
+          claimName: msilver-test-redis
+
+
