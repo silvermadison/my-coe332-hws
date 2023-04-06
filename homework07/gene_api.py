@@ -31,7 +31,7 @@ def handle_data():
         return "data loaded into redis"
     elif request.method == 'DELETE':
         rd.flushdb()
-        return f"data deleted, there are {rd.keys()} in the database"
+        return f"data deleted, there are {rd.keys()} keys in the database"
     else:
         return "the method you tried does not work"
 
