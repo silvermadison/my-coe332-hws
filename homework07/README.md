@@ -75,7 +75,7 @@ In order to retrieve the data from this repository use the command
 ```
 git clone git@github.com:silvermadison/my-coe332-hws.git
 ```
-This will provide you with all the data in this repository. Navigate to the homework06 folder to access its contents so you can follow along with this project.
+This will provide you with all the data in this repository. Navigate to the homework07 folder to access its contents so you can follow along with this project.
 
 
 Create the image using the command ```docker build -t silvermadison/gene_api:1.0 .```.
