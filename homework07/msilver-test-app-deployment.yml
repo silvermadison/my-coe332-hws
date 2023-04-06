@@ -17,9 +17,7 @@ spec:
     spec:
       containers:
         - name: msilver-test-redis
-          imagePullPolicy: Always
           image: redis:7
-          command:
           volumeMounts:
           - name: msilver-test-pvc
             mountPath: "/data"
@@ -27,4 +25,24 @@ spec:
       - name: msilver-test-pvc
         persistentVolumeClaim:
           claimName: msilver-test-pvc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: msilver-test-app
+  template:
+    metadata:
+      labels:
+        app: msilver-test-app
+    spec:
+      containers:
+        - name: msilver-test-flask
+          imagePullPolicy: Always
+          image: silvermadison/gene_api:1.0
+          env:
+          - name: FLASK_APP
+            value: "gene_api.py"
+          ports:
+          - name: http
+            containerPort: 5000
 
