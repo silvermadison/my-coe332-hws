@@ -1,4 +1,4 @@
-# Homework 07 - Gene API with Kubernetes
+# Homework 08 - Gene API with Kubernetes and 
 ## Objective
 The purpose of this assignment is to practice software design including Kubernetes, Redis, REST APIs (Representational State Transfer Application Programming Interfaces), the Flask Application, creating routes in Flask using type annotations and docstrings, working with complex JSON data, and containerization. 
 
@@ -8,7 +8,7 @@ This folder includes 1 script, 1 Dockerfile, 1 docker-compose, 7 yaml files, and
 
 
 ## Required Modules
-This project requires the installation of the requests, Flask, json, and redis modules. Install these modules with the ```pip install``` command in the command line (note: an additional ```-- user``` is needed after install and before the module name for both requests and flask). This project also requires a console with Kubernetes access.
+This project requires the installation of the requests, Flask, json, redis, and matplotlib modules. Install these modules with the ```pip install``` command in the command line (note: an additional ```-- user``` is needed after install and before the module name for both requests and flask). This project also requires a console with Kubernetes access.
 
 
 ## Gene Data
@@ -62,6 +62,12 @@ To check your version of requests, in the VM command line run ```pip freeze | gr
 requests==2.22.0
 ```
 The version of requests I am using is 2.22.0 and this version is also used in the ```RUN``` instruction in the Dockerfile.
+
+To check your version of matplotlib, in the VM command line run ```pip freeze | grep matplotlib```. Output should look similar to:
+```
+matplotlib==3.7.1
+```
+The version of matplotlib I am using is 3.7.1 and this version is also used in the ```RUN``` instruction in the Dockerfile.
 
 
 
