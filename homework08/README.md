@@ -1,4 +1,4 @@
-# Homework 08 - Gene API with Kubernetes and 
+# Homework 08 - Gene API with Kubernetes and Images
 ## Objective
 The purpose of this assignment is to practice software design including Kubernetes, Redis, REST APIs (Representational State Transfer Application Programming Interfaces), the Flask Application, creating routes in Flask using type annotations and docstrings, working with complex JSON data, and containerization. 
 
