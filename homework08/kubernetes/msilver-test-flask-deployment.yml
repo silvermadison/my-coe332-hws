@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msilver-test-app
+  labels:
+    app: msilver-test-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: msilver-test-app
+  template:
+    metadata:
+      labels:
+        app: msilver-test-app
+    spec:
+      containers:
+        - name: msilver-test-flask
+          imagePullPolicy: Always
+          image: silvermadison/gene_api:1.0
+          env:
+          - name: FLASK_APP
+            value: "gene_api.py"
+          - name: REDIS_IP
+            value: msilver-test-redis
+          ports:
+          - name: http
+            containerPort: 5000
+
