@@ -29,6 +29,9 @@ Below are app routes to navigate this API. The requests, json, and redis modules
 | ```/data``` | DELETE | delete data in redis | 
 | ```/genes``` | GET | return a list of all hgnc_ids |
 | ```/genes/<hgnc_id>``` | GET | return all data associated with a specific hgnc_id |
+| ```/image``` | POST | read the gene group IDs and create a histogram image to be uploaded into the redis database |
+| ```/image``` | GET | return the image to the user if it is in the database | 
+| ```/image``` | DELETE | delete the image from the redis database |
 
 
 
@@ -75,7 +78,7 @@ In order to retrieve the data from this repository use the command
 ```
 git clone git@github.com:silvermadison/my-coe332-hws.git
 ```
-This will provide you with all the data in this repository. Navigate to the homework07 folder to access its contents so you can follow along with this project.
+This will provide you with all the data in this repository. Navigate to the homework08 folder to access its contents so you can follow along with this project.
 
 
 Create the image using the command ```docker build -t silvermadison/gene_api:1.0 .```.
@@ -109,7 +112,7 @@ After running the ```kubectl get pods``` command, notice the python debug deploy
 The shell prompt should change to the following, which shows that you are “inside” the container: ```root@py-debug-deployment-f484b4b99-wxdsx:/#```. From here, run an API route. Note the Cluster-IP address for your service after the command  ```kubectl get services```. This IP will be used in replacement for “localhost”.
 
 ### API Command Examples
-The ```/data``` route includes three different methods (POST, GET, DELETE). To specify which method use the notation ```-X <METHOD>``` after the curl command. If no method is specified, it is assumed to be a “GET” method. The ```/data``` will complete one of the three tasks based on the method given: **post** the data to Redis, return/**get** the data for the user, or **delete** the data from the Redis database.
+The ```/data``` and ```/image``` routes include three different methods (POST, GET, DELETE). To specify which method use the notation ```-X <METHOD>``` after the curl command. If no method is specified, it is assumed to be a “GET” method. The ```/data``` will complete one of the three tasks based on the method given: **post** the data to Redis, return/**get** the data for the user, or **delete** the data from the Redis database. The ```/image``` will complete one of the three tasks based on the method given: **post** the image to Redis which is a histogram of the number of gene group ID numbers in the databse, return/**get** the image to the user, or **delete** the image from the Redis database.
 An example: ```curl -X DELETE 10.233.35.77:5000/data```
 ```
 data deleted, there are 0 keys in the database
